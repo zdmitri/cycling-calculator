@@ -11,7 +11,9 @@
 </head>
 <body>
     <form id="mainBlock">
+        <label for="startTime">Start Time</label>
         <input type="time" name="startTime" id="startTime">
+        <label for="finishTime">Finish Time</label>
         <input type="time" name="finishTime" id="finishTime">
         <input type="number" name="distanceValue" id="distanceValue" min="0" placeholder="Distance">
         <select name="distanceUnit" id="distanceUnit">
@@ -19,13 +21,13 @@
             <option value="Miles" disabled>Miles</option>
         </select>
         <!-- <button type="reset">Reset</button> -->
-        <button type="submit">Give me average speed!</button>
+        <button type="button" onclick="getTime()">Give me average speed!</button>
     </form>
     <div id="resultsBlock">
         <!-- here paragraphs with results will be added -->
     </div>
 
-
+    <script src="./script.js">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 </body>
