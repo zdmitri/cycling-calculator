@@ -51,7 +51,7 @@ function getTime() {
 
     let totalTimeInMinutes = finishTimeInMinutes - startTimeInMinutes;
 
-    if (totalTimeInMinutes < 0) {
+    if (totalTimeInMinutes <= 0) {
         totalTimeInMinutes += 1440; // 24 hours*60min = 1440min
     };
     console.log('totalTimeInMinutes', totalTimeInMinutes, typeof(totalTimeInMinutes));
@@ -64,7 +64,7 @@ function getDistance() {
 
     let Distance = document.getElementById('distanceValue').value;
     // let distanceUnit = document.getElementById('distanceUnit').value;
-    Distance = parseInt(Distance);
+    Distance = parseFloat(Distance);
     // console.log(Distance, distanceUnit, typeof(Distance));
     return Distance;
 };
@@ -95,4 +95,30 @@ function getAverageSpeed() {
 
     console.log(averageSpeed, `${distanceUnit}/h`, typeof(averageSpeed));
     return averageSpeed;
+};
+
+
+function outputResult() {
+    // Function to output result to the page
+
+    let averageSpeed = getAverageSpeed();
+    let Distance = getDistance();
+    let distanceUnit = getDistanceUnit();
+    let hoursAndMinutes = getHoursAndMinutes();
+
+    let Result = document.createElement('p');
+    Result.textContent = `Average speed has to be ${averageSpeed} ${distanceUnit}/h    [${Distance} ${distanceUnit} within ${hoursAndMinutes}]`;
+
+    let resultsBlock = document.getElementById('resultsBlock');
+    resultsBlock.prepend(Result);
+    
+    return averageSpeed, distanceUnit;
+};
+
+function getHoursAndMinutes () {
+    let totalTimeInMinutes = getTime();
+    let hours = Math.floor(totalTimeInMinutes / 60);
+    let minutes = totalTimeInMinutes % 60;
+    let hoursAndMinutes = `${hours} hours and ${minutes} minutes`;
+    return hoursAndMinutes;
 };
