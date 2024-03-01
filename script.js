@@ -2,8 +2,7 @@
 // let finishTime;
 // let targetDistance;
 // let avgSpeed;
-// let distanceUnit
-
+// let distanceUnit;
 
 function getTime() {
     // Function to get time from user input (start and finish fields)
@@ -56,14 +55,44 @@ function getTime() {
         totalTimeInMinutes += 1440; // 24 hours*60min = 1440min
     };
     console.log('totalTimeInMinutes', totalTimeInMinutes, typeof(totalTimeInMinutes));
+    return totalTimeInMinutes;
 };
 
 
 function getDistance() {
     // Function to get distance from user input (distance field)
 
-    let targetDistance = document.getElementById('distanceValue').value;
-    let distanceUnit = document.getElementById('distanceUnit').value;
-    console.log(targetDistance, distanceUnit, typeof(targetDistance));
+    let Distance = document.getElementById('distanceValue').value;
+    // let distanceUnit = document.getElementById('distanceUnit').value;
+    Distance = parseInt(Distance);
+    // console.log(Distance, distanceUnit, typeof(Distance));
+    return Distance;
 };
 
+
+function getDistanceUnit() {
+    // Function to get distance unit from user input (distance field)
+
+    let distanceUnit = document.getElementById('distanceUnit').value;
+    // console.log(distanceUnit, typeof(distanceUnit));
+    return distanceUnit;
+};
+
+
+function getAverageSpeed() {
+    // Function to get average speed based on time and distance inputs
+
+    let totalTimeInMinutes = getTime();
+    let Distance = getDistance();
+    let distanceUnit = getDistanceUnit();
+    let averageSpeed;
+
+    console.log(Distance, typeof(Distance));
+    console.log(totalTimeInMinutes, typeof(totalTimeInMinutes));
+
+    averageSpeed = Distance / (totalTimeInMinutes / 60); //average speed in distanceUnit/hour 
+    averageSpeed = parseFloat(averageSpeed.toFixed(1)); //round to 1 decimal places
+
+    console.log(averageSpeed, `${distanceUnit}/h`, typeof(averageSpeed));
+    return averageSpeed;
+};
