@@ -25,18 +25,22 @@
             <input type="time" class="form-control" name="finishTime" id="finishTime">
         </div>
 
-        <div class="input-group mb-3">
+        <div class="input-group mb-2">
             <span class="input-group-text">Distance</span>
-            <input type="number" name="distanceValue" id="distanceValue" min="0" placeholder="Enter distance">
-            <select name="distanceUnit" id="distanceUnit">
+            <input class="form-control" type="number" name="distanceValue" id="distanceValue" min="0" placeholder="Enter distance">
+            <select class="form-select" name="distanceUnit" id="distanceUnit">
                 <option value="KM" selected>KM</option>
                 <option value="Miles">Miles</option>
             </select>
         </div>
-        <!-- <button type="reset">Reset</button> -->
-        <button type="button" onclick="outputResult()">Give me average speed!</button>
+
+        <div class="btn-group col-12" role="group">
+            <button class="btn btn-outline-primary" type="button" onclick="outputResult()">Give me average speed!</button>
+            <button class="btn btn-outline-warning" type="reset">Reset</button>
+        </div>
+    
     </form>
-    <div id="resultsBlock">
+    <div class="mb-2 form-text col-12 mx-auto" id="resultsBlock">
         <!-- here paragraphs with results will be added -->
     </div>
 
