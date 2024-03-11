@@ -13,15 +13,26 @@
 </head>
 <body>
     <form id="mainBlock">
-        <label for="startTime">Start Time</label>
-        <input type="time" name="startTime" id="startTime">
-        <label for="finishTime">Finish Time</label>
-        <input type="time" name="finishTime" id="finishTime">
-        <input type="number" name="distanceValue" id="distanceValue" min="0" placeholder="Distance">
-        <select name="distanceUnit" id="distanceUnit">
-            <option value="KM" selected>KM</option>
-            <option value="Miles">Miles</option>
-        </select>
+        <div class="input-group mb-2">
+            <!-- <label for="startTime">Start Time</label> -->
+            <span class="input-group-text">Start Time</span>
+            <input type="time" class="form-control" name="startTime" id="startTime">
+        </div>
+        
+        <div class="input-group mb-2">
+            <!-- <label for="finishTime">Finish Time</label> -->
+            <span class="input-group-text">Finish Time</span>
+            <input type="time" class="form-control" name="finishTime" id="finishTime">
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text">Distance</span>
+            <input type="number" name="distanceValue" id="distanceValue" min="0" placeholder="Enter distance">
+            <select name="distanceUnit" id="distanceUnit">
+                <option value="KM" selected>KM</option>
+                <option value="Miles">Miles</option>
+            </select>
+        </div>
         <!-- <button type="reset">Reset</button> -->
         <button type="button" onclick="outputResult()">Give me average speed!</button>
     </form>
