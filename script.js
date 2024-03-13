@@ -107,7 +107,13 @@ function outputResult() {
     let hoursAndMinutes = getHoursAndMinutes();
 
     let Result = document.createElement('p');
-    Result.textContent = `Average speed has to be ${averageSpeed} ${distanceUnit}/h    [${Distance} ${distanceUnit} within ${hoursAndMinutes}]`;
+
+    // check which distance unit was selected. If KM, then output speed as KM/h, if Miles - mph
+    if (distanceUnit == 'KM') {
+        Result.textContent = `Average speed has to be ${averageSpeed} ${distanceUnit}/h    [${Distance} ${distanceUnit} within ${hoursAndMinutes}]`
+    } else {
+    Result.textContent = `Average speed has to be ${averageSpeed} mph    [${Distance} ${distanceUnit} within ${hoursAndMinutes}]`
+    };
 
     let resultsBlock = document.getElementById('resultsBlock');
     resultsBlock.prepend(Result);
@@ -115,7 +121,10 @@ function outputResult() {
     return averageSpeed, distanceUnit;
 };
 
+
 function getHoursAndMinutes () {
+    // This function will return string "xx hours and yy minutes" based on calculated total time 
+
     let totalTimeInMinutes = getTime();
     let hours = Math.floor(totalTimeInMinutes / 60);
     let minutes = totalTimeInMinutes % 60;
