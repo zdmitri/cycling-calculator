@@ -15,21 +15,19 @@
 <body>
     <form id="mainBlock">
         <div class="input-group mb-2">
-            <!-- <label for="startTime">Start Time</label> -->
-            <span class="input-group-text">Start Time</span>
-            <input type="time" class="form-control" name="startTime" id="startTime">
+            <span class="input-group-text col-4">Start Time</span>
+            <input type="time" class="form-control col-8" name="startTime" id="startTime">
         </div>
         
         <div class="input-group mb-2">
-            <!-- <label for="finishTime">Finish Time</label> -->
-            <span class="input-group-text">Finish Time</span>
-            <input type="time" class="form-control" name="finishTime" id="finishTime">
+            <span class="input-group-text col-4">Finish Time</span>
+            <input type="time" class="form-control col-8" name="finishTime" id="finishTime">
         </div>
 
         <div class="input-group mb-2">
-            <span class="input-group-text">Distance</span>
-            <input class="form-control" type="number" name="distanceValue" id="distanceValue" min="0" placeholder="Enter distance">
-            <select class="form-select" name="distanceUnit" id="distanceUnit">
+            <span class="input-group-text col-4">Distance</span>
+            <input class="form-control col-6" type="number" name="distanceValue" id="distanceValue" min="0" placeholder="Enter distance">
+            <select class="form-select col-2" name="distanceUnit" id="distanceUnit">
                 <option value="KM" selected>KM</option>
                 <option value="Miles">Miles</option>
             </select>
